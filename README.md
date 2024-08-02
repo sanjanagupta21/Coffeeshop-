@@ -106,10 +106,6 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 4. Push to the branch (`git push origin feature/your-feature`)
 5. Create a new Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 For any questions or suggestions, feel free to open an issue or contact the project maintainer:
