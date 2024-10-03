@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,6 +27,9 @@ SECRET_KEY = "django-insecure-n@^#qphsf&xzs=41re%&6sh0jvhb=36b=8g0*zms0+_%t86c+w
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# AUTH_USER_MODEL = 'app.User'
+
+
 
 
 # Application definition
@@ -50,7 +54,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
+# AUTH_USER_MODEL = 'app.User'
 ROOT_URLCONF = "project.urls"
 
 TEMPLATES = [
@@ -137,3 +141,20 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'nikhilkumar047075@gmail.com'  # Replace with your email address
+EMAIL_HOST_PASSWORD = 'fpci vqvc ixqv gart'  # Replace with your email password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+AUTHENTICATION_BACKENDS = [
+    'app.backends.EmailBackend',  # Add your custom backend
+    'django.contrib.auth.backends.ModelBackend',  # Keep the default model backend
+]
+
+LOGOUT_REDIRECT_URL = '/'
